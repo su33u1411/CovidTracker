@@ -1,0 +1,443 @@
+<div class="container mb-2">
+  <div class="row">
+    <div class="col-12 banner-header">
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <div class="row heading">
+        <div class="col-12">
+          <p>Caller Information</p>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label for="firstName" class="col-2 col-form-label">First Name</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="firstName">
+        </div>
+        <label for="lastName" class="col-2 col-form-label">Last Name</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="lastName">
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label for="age" class="col-2 col-form-label">Age</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="age">
+        </div>
+        <label for="gender" class="col-2 col-form-label">Phone</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="gender">
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label for="city" class="col-2 col-form-label">City</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="city">
+        </div>
+        <label for="state" class="col-2 col-form-label">State</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="state">
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label for="zipCode" class="col-2 col-form-label">Zip Code</label>
+        <div class="col-4">
+          <input type="text" class="input-group form-control" id="zipCode">
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label for="householdCount" class="col-3 col-form-label">How many people are in your household ?</label>
+        <div class="col-3">
+          <input type="text" class="input-group form-control" id="householdCount">
+        </div>
+        <label for="treatment" class="col-3 col-form-label">Have you already sought treatment ?</label>
+        <div class="col-3">
+          <input type="text" class="input-group form-control" id="treatment">
+        </div>
+      </div>
+      <div class="row heading">
+        <div class="col-12">
+          <p>Symptom Checker</p>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label class="col-2 col-form-label">Standard Symptoms <small class="supporting-text">
+          (If you are experiencing any of the below symptoms call your primary care to discuss your symptoms and
+          treatment options.)
+        </small></label>
+        <div class="col-4">
+          <div class="overflow-auto options-box">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="fever" value="fever">
+              <label class="form-check-label attributable" for="fever">
+                Fever
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="cough" value="cough">
+              <label class="form-check-label attributable" for="cough">
+                Cough
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="sob" value="Shortness of breath">
+              <label class="form-check-label attributable" for="sob">
+                Shortness of breath
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="baches"
+                     value="Shortness of breath">
+              <label class="form-check-label attributable" for="baches">
+                Body Aches*
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="chills"
+                     value="Shortness of breath">
+              <label class="form-check-label attributable" for="chills">
+                Chills*
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="dia" value="Shortness of breath">
+              <label class="form-check-label attributable" for="dia">
+                Diarrhea*
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="fatigue"
+                     value="Shortness of breath">
+              <label class="form-check-label attributable" for="fatigue">
+                Fatigue*
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="headache"
+                     value="Shortness of breath">
+              <label class="form-check-label attributable" for="headache">
+                Headache*
+              </label>
+            </div>
+          </div>
+          <p class="supporting-text">* Less Common Symptoms</p>
+        </div>
+        <label class="col-2 col-form-label">Emergency Symptoms <small class="supporting-text">(If you are experiencing
+          any of the following symptoms, please seek immediate medical care)</small></label>
+        <div class="col-4">
+          <div class="overflow-auto options-box">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="fever">
+              <label class="form-check-label attributable">
+                Difficulty breathing
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="cough">
+              <label class="form-check-label attributable">
+                Persistent pain/pressure in chest
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Shortness of breath">
+              <label class="form-check-label attributable">
+                Confusion/can't get up
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Shortness of breath">
+              <label class="form-check-label attributable">
+                Blueish lips/face (seek medical attention immediately)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row heading">
+        <div class="col-12">
+          <p>Health Condition Checker</p>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label class="col-2 col-form-label">Risk Factors </label>
+        <div class="col-10">
+          <div class="overflow-auto options-box">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf1" value="fever">
+              <label class="form-check-label attributable" for="rf1">
+                Pregnant or post-partum (2 weeks)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf2" value="cough">
+              <label class="form-check-label attributable" for="rf2">
+                Age less than 2 or greater than 65 years old
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label class="col-2 col-form-label">Underlying Health Conditions </label>
+        <div class="col-10">
+          <div class="overflow-auto options-box" style="height: 205px">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Asthma
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc2" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Brain Injury
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc3" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Cancer
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc4" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                COPD
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc5" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Diabetes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc6" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Heart Diseases
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc7" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                HIV/AIDS
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc8" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Kawasaki's Disease
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc9" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Kidney Disease
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc10" value="cough">
+              <label class="form-check-label attributable" for="uhc2">
+                Liver Disease
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label class="col-2 col-form-label" for="otherConditions">Other Conditions </label>
+        <div class="col-10">
+          <textarea class="form-control" id="otherConditions" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="row heading">
+        <div class="col-12">
+          <p>Exposure Checker</p>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <label class="col-2 col-form-label">Exposure</label>
+        <div class="col-10">
+          <p class="supporting-text">Example of close contact include hugging,kissing,sharing,eating or drinking
+            utensils</p>
+          <div class="overflow-auto options-box">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Pregnant or post-partum (2 weeks)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc2" value="fever">
+              <label class="form-check-label attributable" for="uhc1">
+                Pregnant or post-partum (2 weeks)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row custom-row ">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+            <label class="form-check-label" for="uhc1">
+              Lives in area of known high transmission rate/spread
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row custom-row ">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+            <label class="form-check-label" for="uhc1">
+              Travelled from an area of high ongoing coronavirus transmission rate
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row heading">
+        <div class="col-12">
+          <p>Referral</p>
+        </div>
+      </div>
+      <div class="form-group row custom-row">
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+            <label class="form-check-label" for="uhc1">
+              Clinical Referral
+            </label>
+          </div>
+        </div>
+        <label for="refer" class="col-3 col-form-label">Where did we refer them ?</label>
+        <div class="col-3">
+          <input type="text" class="input-group form-control" id="refer">
+        </div>
+      </div>
+    </div>
+    <div class="col-3 border-left qaSection">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">Frequently Asked Questions</h5>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a class="question" data-toggle="collapse" href="#question1" role="button" aria-expanded="false">1. What are
+            the symptoms of the coronavirus?</a>
+          <div class="collapse" id="question1">
+            <p class=" answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question2" role="button" aria-expanded="false"> 2. What to
+            do if i was exposed to someone who has coronavirus?</a>
+          <div class="collapse" id="question2">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question3" role="button" aria-expanded="false"> 3. I think i
+            might have coronavirus, what should i do?</a>
+          <div class="collapse" id="question3">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question4" role="button" aria-expanded="false"> 4. Does my
+            health insurance coronavirus testing?</a>
+          <div class="collapse" id="question4">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question5" role="button" aria-expanded="false"> 5. I have
+            high deductible plan,does my health insurance cover coronavirus testing?</a>
+          <div class="collapse" id="question5">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question6" role="button" aria-expanded="false"> 6. How do i
+            get tested for the coronavirus?</a>
+          <div class="collapse" id="question6">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question7" role="button" aria-expanded="false"> 7. What
+            should i expect when getting a coronavirus test?</a>
+          <div class="collapse" id="question7">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question8" role="button" aria-expanded="false"> 8. Are video
+            visits covered?</a>
+          <div class="collapse" id="question8">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question9" role="button" aria-expanded="false"> 9. How is
+            the virus transmitted from one person to another?</a>
+          <div class="collapse" id="question9">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <hr>
+          <a class="question" data-toggle="collapse" href="#question10" role="button" aria-expanded="false"> 10. How
+            long does one remain infected with the virus?</a>
+          <div class="collapse" id="question10">
+            <p class="answer overflow-auto" style="height: 150px">Ans: Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
