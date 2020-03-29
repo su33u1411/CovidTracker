@@ -14,47 +14,63 @@
       <div class="form-group row custom-row">
         <label for="firstName" class="col-2 col-form-label">First Name</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="firstName">
+          <input type="text" class="input-group form-control" id="firstName" [(ngModel)]="this.caller.firstName">
         </div>
         <label for="lastName" class="col-2 col-form-label">Last Name</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="lastName">
+          <input type="text" class="input-group form-control" id="lastName" [(ngModel)]="this.caller.lastName">
         </div>
       </div>
       <div class="form-group row custom-row">
         <label for="age" class="col-2 col-form-label">Age</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="age">
+          <input type="text" class="input-group form-control" id="age" [(ngModel)]="this.caller.age">
         </div>
-        <label for="gender" class="col-2 col-form-label">Phone</label>
+        <label for="phone" class="col-2 col-form-label">Phone</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="gender">
+          <input type="text" class="input-group form-control" id="phone" [(ngModel)]="this.caller.phone">
         </div>
       </div>
       <div class="form-group row custom-row">
         <label for="city" class="col-2 col-form-label">City</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="city">
+          <input type="text" class="input-group form-control" id="city" [(ngModel)]="this.caller.city">
         </div>
         <label for="state" class="col-2 col-form-label">State</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="state">
+          <input type="text" class="input-group form-control" id="state" [(ngModel)]="this.caller.state">
         </div>
       </div>
       <div class="form-group row custom-row">
         <label for="zipCode" class="col-2 col-form-label">Zip Code</label>
         <div class="col-4">
-          <input type="text" class="input-group form-control" id="zipCode">
+          <input type="text" class="input-group form-control" id="zipCode" [(ngModel)]="this.caller.zip">
         </div>
       </div>
       <div class="form-group row custom-row">
         <label for="householdCount" class="col-3 col-form-label">How many people are in your household ?</label>
         <div class="col-3">
-          <input type="text" class="input-group form-control" id="householdCount">
+          <select id="householdCount" [(ngModel)]="this.caller.hhCount" class="form-control">
+            <option selected>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
         </div>
         <label for="treatment" class="col-3 col-form-label">Have you already sought treatment ?</label>
         <div class="col-3">
-          <input type="text" class="input-group form-control" id="treatment">
+          <div class="input-group">
+            <select id="treatment" [(ngModel)]="this.caller.soughtTreatment" class="form-control">
+              <option disabled selected>Please Select</option>
+              <option [value]="true">Yes</option>
+              <option [value]="false">No</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="row heading">
@@ -70,53 +86,53 @@
         <div class="col-4">
           <div class="overflow-auto options-box">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="fever" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="fever" value="fever" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="fever">
                 Fever
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="cough" value="cough">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="cough" value="cough" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="cough">
                 Cough
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="sob" value="Shortness of breath">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="sob" value="Shortness of breath" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="sob">
                 Shortness of breath
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="baches"
-                     value="Shortness of breath">
-              <label class="form-check-label attributable" for="baches">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="bodyAches"
+                     value="Body Aches" (change)="addStandardSymptom($event)">
+              <label class="form-check-label attributable" for="bodyAches">
                 Body Aches*
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="exampleRadios" id="chills"
-                     value="Shortness of breath">
+                     value="Chills" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="chills">
                 Chills*
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="dia" value="Shortness of breath">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="dia" value="Diarrhea" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="dia">
                 Diarrhea*
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="exampleRadios" id="fatigue"
-                     value="Shortness of breath">
+                     value="fatigue" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="fatigue">
                 Fatigue*
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="exampleRadios" id="headache"
-                     value="Shortness of breath">
+                     value="headache" (change)="addStandardSymptom($event)">
               <label class="form-check-label attributable" for="headache">
                 Headache*
               </label>
@@ -129,26 +145,26 @@
         <div class="col-4">
           <div class="overflow-auto options-box">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" value="fever">
-              <label class="form-check-label attributable">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Difficulty breathing" (change)="addEmergencySymptom($event)" id="es1">
+              <label class="form-check-label attributable" for="es1">
                 Difficulty breathing
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" value="cough">
-              <label class="form-check-label attributable">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Persistent pain" (change)="addEmergencySymptom($event)" id="es2">
+              <label class="form-check-label attributable" for="es2">
                 Persistent pain/pressure in chest
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Shortness of breath">
-              <label class="form-check-label attributable">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Confusion" (change)="addEmergencySymptom($event)" id="es3">
+              <label class="form-check-label attributable" for="es3">
                 Confusion/can't get up
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Shortness of breath">
-              <label class="form-check-label attributable">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" value="Blueish lips" (change)="addEmergencySymptom($event)" id="es4">
+              <label class="form-check-label attributable" for="es4">
                 Blueish lips/face (seek medical attention immediately)
               </label>
             </div>
@@ -165,13 +181,13 @@
         <div class="col-10">
           <div class="overflow-auto options-box">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf1" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf1" value="Pregnant" (change)="addRiskFactors($event)">
               <label class="form-check-label attributable" for="rf1">
                 Pregnant or post-partum (2 weeks)
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf2" value="cough">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="rf2" value="Age" (change)="addRiskFactors($event)">
               <label class="form-check-label attributable" for="rf2">
                 Age less than 2 or greater than 65 years old
               </label>
@@ -184,61 +200,61 @@
         <div class="col-10">
           <div class="overflow-auto options-box" style="height: 205px">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="Asthma" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Asthma
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc2" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc2" value="Brain Injury" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Brain Injury
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc3" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc3" value="Cancer" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Cancer
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc4" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc4" value="COPD" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 COPD
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc5" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc5" value="Diabetes" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Diabetes
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc6" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc6" value="Heart Diseases" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Heart Diseases
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc7" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc7" value="HIV/AIDS" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 HIV/AIDS
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc8" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc8" value=" Kawasaki's Disease" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Kawasaki's Disease
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc9" value="fever">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc9" value="Kidney Disease" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc1">
                 Kidney Disease
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc10" value="cough">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc10" value="Liver Disease" (change)="addUnderlyingHealthConditions($event)">
               <label class="form-check-label attributable" for="uhc2">
                 Liver Disease
               </label>
@@ -249,7 +265,7 @@
       <div class="form-group row custom-row">
         <label class="col-2 col-form-label" for="otherConditions">Other Conditions </label>
         <div class="col-10">
-          <textarea class="form-control" id="otherConditions" rows="5"></textarea>
+          <textarea class="form-control" id="otherConditions" rows="5" [(ngModel)]="this.healthConditionChecker.otherConditions"></textarea>
         </div>
       </div>
       <div class="row heading">
@@ -264,15 +280,15 @@
             utensils</p>
           <div class="overflow-auto options-box">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
-              <label class="form-check-label attributable" for="uhc1">
-                Pregnant or post-partum (2 weeks)
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="ex1" (change)="addExposure($event)" value="HouseHoldCloseContact">
+              <label class="form-check-label attributable" for="ex1">
+                Household Close contact. Do you live in the same household as a person confirmed,probable or suspected case of corona virus/Covid-19?
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc2" value="fever">
-              <label class="form-check-label attributable" for="uhc1">
-                Pregnant or post-partum (2 weeks)
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="ex2" (change)="addExposure($event)" value="closeContact">
+              <label class="form-check-label attributable" for="ex2">
+                Other Close Contact.Have you been within 6 feet/2 meters,touching distance with a person confirmed,probable or suspected case of corona virus/Covid-19?
               </label>
             </div>
           </div>
@@ -281,8 +297,8 @@
       <div class="form-group row custom-row ">
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
-            <label class="form-check-label" for="uhc1">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="ex3" (change)="setLivesExposure()">
+            <label class="form-check-label" for="ex3">
               Lives in area of known high transmission rate/spread
             </label>
           </div>
@@ -291,13 +307,14 @@
       <div class="form-group row custom-row ">
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
-            <label class="form-check-label" for="uhc1">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="ex4" (change)="setTravelledExposure()">
+            <label class="form-check-label" for="ex4">
               Travelled from an area of high ongoing coronavirus transmission rate
             </label>
           </div>
         </div>
       </div>
+      <!-- Referral -->
       <div class="row heading">
         <div class="col-12">
           <p>Referral</p>
@@ -306,15 +323,20 @@
       <div class="form-group row custom-row">
         <div class="col-6">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="exampleRadios" id="uhc1" value="fever">
-            <label class="form-check-label" for="uhc1">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="r" (change)="setClinicalReferral()">
+            <label class="form-check-label" for="r">
               Clinical Referral
             </label>
           </div>
         </div>
-        <label for="refer" class="col-3 col-form-label">Where did we refer them ?</label>
+        <label for="r1" class="col-3 col-form-label">Where did we refer them?</label>
         <div class="col-3">
-          <input type="text" class="input-group form-control" id="refer">
+          <input type="text" class="input-group form-control" id="r1" [(ngModel)]="this.referral.referredTo">
+        </div>
+      </div>
+      <div class="row justify-content-end mt-2">
+        <div class="col-4">
+          <button type="button" class="btn btn-primary btn-block" (click)="submitRequest()">Submit</button>
         </div>
       </div>
     </div>
@@ -440,4 +462,5 @@
       </div>
     </div>
   </div>
+
 </div>
