@@ -26,12 +26,22 @@ export class HomeComponent implements OnInit {
   submitRequest() {
     this.request = {
       caller: this.caller,
-      symptomsChecker: this.symptomsChecker,
+      symptomsChecker: {
+        emergencySymptoms: Array.from(this.symptomsChecker.emergencySymptoms.values()),
+        standardSymptoms: Array.from(this.symptomsChecker.standardSymptoms.values())
+      },
       referral: this.referral,
-      exposureChecker: this.exposureChecker,
-      healthConditionChecker: this.healthConditionChecker
+      exposureChecker: {
+        highRiskAreaResident: this.exposureChecker.highRiskAreaResident,
+        highRiskAreaTravel: this.exposureChecker.highRiskAreaTravel,
+        exposures: Array.from(this.exposureChecker.exposures.values())
+      },
+      healthConditionChecker: {
+        riskFactors: Array.from(this.healthConditionChecker.riskFactors.values()),
+        underlyingHealthConditions: Array.from(this.healthConditionChecker.underlyingHealthConditions.values()),
+        otherConditions: this.healthConditionChecker.otherConditions
+      }
     };
-    console.log(this.request);
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
     this.http.post('https://hungrypanda.us/covid19/tracker/submit-data', this.request, {headers}).subscribe((response) => {
