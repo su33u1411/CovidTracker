@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Caller, ExposureChecker, HealthConditionChecker, Referral, SymptomChecker} from '../model/caller';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
   exposureChecker = new ExposureChecker();
   healthConditionChecker = new HealthConditionChecker();
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -30,6 +32,11 @@ export class HomeComponent implements OnInit {
       healthConditionChecker: this.healthConditionChecker
     };
     console.log(this.request);
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    this.http.post('https://hungrypanda.us/covid19/tracker/submit-data', this.request, {headers}).subscribe((response) => {
+      console.log(response);
+    });
   }
 
   addStandardSymptom(input) {
