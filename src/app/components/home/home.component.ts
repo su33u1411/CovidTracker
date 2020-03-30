@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Caller, ExposureChecker, HealthConditionChecker, Referral, SymptomChecker} from '../model/caller';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
 @Component({
@@ -16,19 +16,25 @@ export class HomeComponent implements OnInit {
   referral = new Referral();
   exposureChecker = new ExposureChecker();
   healthConditionChecker = new HealthConditionChecker();
+  successesmessage: boolean;
+  errormessage: boolean;
+  messageBox: boolean;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
+    this.messageBox = false;
+    this.successesmessage = false;
+    this.errormessage = false;
   }
 
   submitRequest() {
     this.request = {
       caller: this.caller,
-      symptomsChecker: {
-        emergencySymptoms: Array.from(this.symptomsChecker.emergencySymptoms.values()),
-        standardSymptoms: Array.from(this.symptomsChecker.standardSymptoms.values())
+      symptomChecker: {
+        emergencySymptons: Array.from(this.symptomsChecker.emergencySymptoms.values()),
+        standardSymptons: Array.from(this.symptomsChecker.standardSymptoms.values())
       },
       referral: this.referral,
       exposureChecker: {
@@ -44,9 +50,16 @@ export class HomeComponent implements OnInit {
     };
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
-    this.http.post('https://hungrypanda.us/covid19/tracker/submit-data', this.request, {headers}).subscribe((response) => {
-      console.log(response);
+    this.http.post('https://hungrypanda.us/covid19/tracker/submit-data', this.request, {headers}).subscribe(response => {}, error => {
+      if (error.status === 200) {
+        this.successesmessage = true;
+        this.errormessage = false;
+      } else {
+        this.successesmessage = false;
+        this.errormessage = true;
+      }
     });
+    this.messageBox = true;
   }
 
   addStandardSymptom(input) {

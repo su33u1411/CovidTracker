@@ -1,3 +1,16 @@
+<div class="row" id="messageBox" *ngIf="this.messageBox">
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <p class="text-success test-center" *ngIf="this.successesmessage">Form has been successfully Submitted</p>
+        <p class="text-danger" *ngIf="this.errormessage">Unable to submit form, Please try again</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-info" (click)="this.messageBox = false">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container mb-2">
   <div class="row">
     <div class="col-12 banner-header">
@@ -463,4 +476,6 @@
     </div>
   </div>
 
+
 </div>
+
